@@ -21,6 +21,7 @@ extern "C"
 #endif
 
 #include <stdint.h>
+#include <time.h>
 
 #include "rcutils/macros.h"
 #include "rcutils/types.h"
@@ -176,6 +177,21 @@ RCUTILS_PUBLIC
 RCUTILS_WARN_UNUSED
 rcutils_ret_t
 rcutils_time_point_value_as_seconds_string(
+  const rcutils_time_point_value_t * time_point,
+  char * str,
+  size_t str_size);
+
+RCUTILS_PUBLIC
+RCUTILS_WARN_UNUSED
+rcutils_ret_t rcutils_time_point_value_as_hmsms_string(
+  const rcutils_time_point_value_t *time_point, 
+  char *str, 
+  size_t str_size);
+
+RCUTILS_PUBLIC
+RCUTILS_WARN_UNUSED
+rcutils_ret_t
+rcutils_time_point_value_as_date_string(
   const rcutils_time_point_value_t * time_point,
   char * str,
   size_t str_size);
